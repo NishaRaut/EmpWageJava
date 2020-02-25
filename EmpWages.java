@@ -2,7 +2,8 @@ class EmpWages {
 	//constants
 	public static final int wagePerHr = 20;
    public static final int fullDayHr = 8;
-   public static final int partTimeHr = 4;
+	public static final int partTimeHr = 4;
+	public static final int monthlyWorkingDays = 20;
 
  public static void main(String args[]){
 	int empHr = 0;
@@ -24,6 +25,7 @@ class EmpWages {
 	}
 
 	int dailyEmpWages = wagePerHr * empHr;
-	System.out.println("Daily employee wages: "+dailyEmpWages);
+	int monthlyEmployeeWages = dailyEmpWages * monthlyWorkingDays;
+	System.out.println("Monthly employee wages: "+monthlyEmployeeWages);
  }
 }
