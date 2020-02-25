@@ -5,27 +5,30 @@ class EmpWages {
 	public static final int partTimeHr = 4;
 	public static final int monthlyWorkingDays = 20;
 
- public static void main(String args[]){
-	int empHr = 0;
-	int random = (int)(Math.floor( Math.random()*10)%3 );
+	public int calculateDailyWages(){
+		int empHr = 0;
+		int random = (int)(Math.floor( Math.random()*10)%3 );
 
-	switch ( (int)random ){
-	case 1:
-		System.out.println("Employee present full time: ");
-		empHr = fullDayHr;
-		break;
-	case 2:
-		System.out.println("Employee present part time: ");
-		empHr = partTimeHr;
-		break;
-	default :
-		System.out.println("Employee is Absent!!");
-		empHr = 0 ;
-		break;
+		switch ( (int)random ){
+			case 1:
+			empHr = fullDayHr;
+			break;
+		case 2:
+			empHr = partTimeHr;
+			break;
+		default :
+			empHr = 0 ;
+			break;
+		}
+		int dailyEmpWages = empHr * wagePerHr; 
+	return dailyEmpWages;
 	}
-
-	int dailyEmpWages = wagePerHr * empHr;
-	int monthlyEmployeeWages = dailyEmpWages * monthlyWorkingDays;
-	System.out.println("Monthly employee wages: "+monthlyEmployeeWages);
- }
+	public static void main(String args[]){
+		EmpWages emp = new EmpWages();
+		int monthlyWages = 0;
+			for( int i=0; i<wagePerHr; i++ ){
+ 				monthlyWages += emp.calculateDailyWages();
+				System.out.println("Monthly wages: "+monthlyWages);
+			}
+	}
 }
