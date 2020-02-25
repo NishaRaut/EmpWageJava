@@ -1,14 +1,18 @@
 class EmpWages {
 
  public static void main(String args[]){
-	System.out.println("welcome to employee wages");
+	int wagePerHr = 20;
+	int fullDayHr = 8;
+	
 	long random = Math.round( Math.random() )  ;
 	if( random == 1 ){
 		System.out.println("Employee is present..");
+		long dailyWages = wagePerHr * fullDayHr;
+		System.out.println("Daily Employee Wage = "+dailyWages);
 	}
 	else
 	{
-	System.out.println("Employee is absent!!");
+		System.out.println("Employee is absent!!");
 	}
  }
 }
