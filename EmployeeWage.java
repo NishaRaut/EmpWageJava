@@ -28,6 +28,7 @@ public class EmployeeWage {
 		for(int i=0;i<companyArray.length;i++)
 		{
 			int day=0;
+			int totalWages =0;
 			System.out.println(companyArray[i].companyName);
 			while(day<=companyArray[i].numOfWorkingDays && empHr<=companyArray[i].monthWorkingHrs)
 			{
@@ -46,7 +47,9 @@ public class EmployeeWage {
 				}
 		int dailyEmpWages = empHr * companyArray[i].wagePerHr; 
 		System.out.println(">>>>>>>"+dailyEmpWages);
+		 totalWages += dailyEmpWages; 
 		}
+		System.out.println("total wages>>>"+totalWages);
 	}
 }
 
